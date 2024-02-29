@@ -1,11 +1,7 @@
 import { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
 import { Mail } from '../models';
-
-type NodemailerError = {
-  response: string;
-  responseCode: number;
-};
+import { NodemailerError } from '../classes';
 
 class MailController {
   public async post(req: Request, res: Response) {
@@ -33,7 +29,7 @@ class MailController {
         message: 'Message sent successfully.',
         response: response,
       });
-    } catch (error: unknown) {
+    } catch (error) {
       return res.status((error as NodemailerError).responseCode).json({
         error: (error as NodemailerError).response,
       });
