@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
 import { Mail } from '../models';
 
-type NodeMailerError = {
+type NodemailerError = {
   response: string;
   responseCode: number;
 };
@@ -34,8 +34,8 @@ class MailController {
         response: response,
       });
     } catch (error: unknown) {
-      return res.status((error as NodeMailerError).responseCode).json({
-        error: (error as NodeMailerError).response,
+      return res.status((error as NodemailerError).responseCode).json({
+        error: (error as NodemailerError).response,
       });
     }
   }
