@@ -1,6 +1,6 @@
 {
   "name": "nodemailer-api",
-  "description": "An interface for nodemailer NPM package.",
+  "description": "A simple application programming interface which uses the NPM package Nodemailer to send mails.",
   "author": {
     "name": "Onur Ravli",
     "email": "onur@onurravli.com"
